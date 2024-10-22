@@ -23,8 +23,8 @@ export default function SiderMenu({ setFilter }) {
           {
             key: "1",
             icon: <PlayCircleOutlined />,
-            label: "Finished",
-            onClick: () => setFilter("Finished Airing"),
+            label: "Drama",
+            onClick: () => setFilter("Drama"),
           },
           {
             key: "2",

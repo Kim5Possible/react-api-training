@@ -23,7 +23,10 @@ export function useFetchData({ filter }) {
         const response = await fetch(dataUrl);
         const data = await response.json();
         const filteredData = data.data.filter(
-          (item) => item.status === filter || filter === "All"
+          (item) =>
+            item.status === filter ||
+            filter === "All" ||
+            item.genres.some((genre) => genre.name.includes(filter))
         );
         setData(filteredData);
         setList(filteredData.slice(0, Math.min(count, filteredData.length)));

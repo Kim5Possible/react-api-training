@@ -1,18 +1,16 @@
 import { useFetchData } from "../../../../hooks/useFetchData";
-import { Button, Card, Flex, Typography, List } from "antd";
+import { Button, Card, Flex, Typography, List, Popover } from "antd";
 import { StarTwoTone } from "@ant-design/icons";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function ListNow({ filter }) {
   const [loadMore, initLoading, list, error] = useFetchData({ filter });
-  const [filteredData, setFilteredData] = useState(list);
-  useEffect(() => {
-    const filteredList = list.filter(
-      (item) => item.status === filter || filter === "All"
-    );
+  const [open, setOpen] = useState(false);
 
-    setFilteredData(filteredList);
-  }, [filter, list]);
+  const handleOpenChange = (id) => {
+    setOpen((prevOpen) => ({ ...prevOpen, [id]: !prevOpen[id] }));
+  };
+
   return (
     <section>
       <Typography.Title level={2}>Top Anime</Typography.Title>
@@ -24,7 +22,7 @@ function ListNow({ filter }) {
           loading={initLoading}
           itemLayout="horizontal"
           loadMore={loadMore}
-          dataSource={filteredData}
+          dataSource={list}
           renderItem={
             (item) => (
               <List.Item key={item.mal_id}>
@@ -109,7 +107,23 @@ function ListNow({ filter }) {
                             )
                         )}
                       </div>
-                      <Button type="primary">Watch Now</Button>
+                      <Popover
+                        content={
+                          <div className="text-xs max-w-2xl">
+                            {item.synopsis}
+                          </div>
+                        }
+                        title={
+                          <Typography.Title level={5} style={{ margin: 0 }}>
+                            Synopsis {item.title_english}
+                          </Typography.Title>
+                        }
+                        trigger="click"
+                        open={open[item.mal_id]}
+                        onOpenChange={() => handleOpenChange(item.mal_id)}
+                      >
+                        <Button type="primary">Synopsis</Button>
+                      </Popover>
                     </Flex>
                   </Flex>
                 </Card>
