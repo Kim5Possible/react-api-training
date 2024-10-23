@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.10a1bff5.css",
-    "main.js": "/static/js/main.80bfcd90.js",
-    "static/js/453.77b15236.chunk.js": "/static/js/453.77b15236.chunk.js",
-    "static/media/image1.png": "/static/media/image1.27548fea671be5fe04c3.png",
-    "static/media/image2.png": "/static/media/image2.7d054e07b32d543fc44a.png",
-    "index.html": "/index.html",
-    "main.10a1bff5.css.map": "/static/css/main.10a1bff5.css.map",
-    "main.80bfcd90.js.map": "/static/js/main.80bfcd90.js.map",
-    "453.77b15236.chunk.js.map": "/static/js/453.77b15236.chunk.js.map"
+    "main.css": "/react-api-training/static/css/main.10a1bff5.css",
+    "main.js": "/react-api-training/static/js/main.1ad34b33.js",
+    "static/js/453.77b15236.chunk.js": "/react-api-training/static/js/453.77b15236.chunk.js",
+    "static/media/image1.png": "/react-api-training/static/media/image1.27548fea671be5fe04c3.png",
+    "static/media/image2.png": "/react-api-training/static/media/image2.7d054e07b32d543fc44a.png",
+    "index.html": "/react-api-training/index.html",
+    "main.10a1bff5.css.map": "/react-api-training/static/css/main.10a1bff5.css.map",
+    "main.1ad34b33.js.map": "/react-api-training/static/js/main.1ad34b33.js.map",
+    "453.77b15236.chunk.js.map": "/react-api-training/static/js/453.77b15236.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.10a1bff5.css",
-    "static/js/main.80bfcd90.js"
+    "static/js/main.1ad34b33.js"
   ]
 }
